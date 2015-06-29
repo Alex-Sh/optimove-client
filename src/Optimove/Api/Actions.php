@@ -5,19 +5,22 @@ use oNeDaL\Optimove\Api;
 
 class Actions
 {
+    private $client;
+
+    public function __construct($client)
+    {
+        $this->client = $client;
+    }
+
 
     public function getExecutedCampaignDetails($date)
     {
-        $response = $this->client->get('actions/GetExecutedCampaignDetails', array(
-            'headers' => array('Authorization-Token' => $this->token),
-            'query' => array('date' => $date)
-        ));
+        $result = $this->client->get('actions/GetExecutedCampaignDetails', [
+                'date' => $date
+        ]);
 
-        if ($response->getStatusCode()) {
-            return $response->json();
-        } else {
-            return array();
-        }
+        return $result;
+
     }
 
 
