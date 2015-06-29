@@ -16,11 +16,11 @@ class Actions
     public function getExecutedCampaignDetails($date)
     {
         $result = $this->client->get('actions/GetExecutedCampaignDetails', [
-                'date' => $date
+            'date' => $date
         ]);
 
         if (isset($result->success) && $result->success === TRUE) {
-            $result->data;
+            return $result->data;
         }
 
         return FALSE;
