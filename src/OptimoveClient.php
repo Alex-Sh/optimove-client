@@ -62,6 +62,7 @@ class OptimoveClient
             $this->client->setToken($firstToken);
         }
 
+        $this->actions = new Api\Actions($this->client);
         $this->customers = new Api\Customers($this->client);
     }
 
