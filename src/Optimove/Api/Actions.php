@@ -19,8 +19,11 @@ class Actions
                 'date' => $date
         ]);
 
-        return $result;
+        if (isset($result->success) && $result->success === TRUE) {
+            $result->data;
+        }
 
+        return FALSE;
     }
 
 
