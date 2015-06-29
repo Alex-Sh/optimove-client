@@ -1,0 +1,19 @@
+{
+    "name": "onedal/optimove-client",
+    "description": "Optimove API client",
+    "require": {
+        "guzzlehttp/guzzle": "6.0.*"
+    },
+    "authors": [
+        {
+            "name": "oNeDaL",
+            "email": "onedal@voodoo.technology"
+        }
+    ],
+    "autoload": {
+        "files": ["src/functions.php"],
+        "psr-4": {
+            "oNeDaL\\": "src/"
+        }
+    }
+}
