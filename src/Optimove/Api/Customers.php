@@ -28,20 +28,12 @@ class Customers
 
     public function getPromoCodesByTargetGroup($targetGroupId, $date)
     {
-        $response = $this->client->get('actions/GetPromoCodesByTargetGroup', array(
-            'query' => array(
-                'targetGroupId' => (int) $targetGroupId,
-                'date' => $date
-            )
-        ));
+        $result = $this->client->get('actions/GetPromoCodesByTargetGroup', [
+            'targetGroupId' => (int) $targetGroupId,
+            'date' => $date
+        ]);
 
-        return $response->json();
-
-        if ($response->getStatusCode() == 200) {
-            return $response->json();
-        } else {
-            return array();
-        }
+        return $result;
     }
 
 }
