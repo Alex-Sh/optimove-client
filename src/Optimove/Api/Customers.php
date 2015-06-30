@@ -22,7 +22,7 @@ class Customers
             'date' => $date
         ]);
 
-        return $result;
+        return $result->data;
     }
 
 
@@ -33,7 +33,7 @@ class Customers
             'date' => $date
         ]);
 
-        return $result;
+        return $result->data;
     }
 
 }
