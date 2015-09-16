@@ -134,7 +134,7 @@ class HttpClient
                 } else if ($httpStatusCode == 403) {
                     // access denied (invalid token)
 
-                    throw new \Exception ('Expired token', 403);
+                    throw new \Exception ('Access denied', 403);
                 }
             }
         }
