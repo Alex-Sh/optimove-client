@@ -27,4 +27,18 @@ class Actions
     }
 
 
+    public function getAllActions()
+    {
+        $result = $this->client->get('actions/GetAllActions', [
+            'date' => $date
+        ]);
+
+        if (isset($result->success) && $result->success === TRUE) {
+            return $result->data;
+        }
+
+        return FALSE;
+    }
+
+
 }
