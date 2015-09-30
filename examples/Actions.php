@@ -12,6 +12,9 @@ try {
     $executedCampaignDetails = $optimove->actions->getExecutedCampaignDetails($date);
     echo "Executed campaign details for date {$date}: \n";
     var_dump($executedCampaignDetails);
+
+    $channels = $optimove->actions->getExecutionChannels();
+    var_dump($channels);
 } catch(\Exception $e) {
     var_dump($e->getMessage());
 }

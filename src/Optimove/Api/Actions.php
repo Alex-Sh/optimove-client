@@ -39,4 +39,24 @@ class Actions
     }
 
 
+    /**
+     *
+     * @return array
+     */
+    public function getExecutionChannels()
+    {
+        $result = [];
+        $response = $this->client->get('actions/GetExecutionChannels');
+        if (isset($response->success) && $response->success === TRUE) {
+            foreach ((array) $response->data as $item) {
+                $result[$item->ChannelId] = $item->ChannelName;
+            }
+
+            return $result;
+        }
+
+        return FALSE;
+    }
+
+
 }
